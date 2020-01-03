@@ -1,0 +1,135 @@
+module.exports = {
+  "parser": "babel-eslint",
+  "extends": [
+    "react-app",
+    "airbnb"
+  ],
+  "plugins": [
+    "babel",
+    "chai-friendly"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jest": true
+  },
+  "rules": {
+    "react/prop-types": 0,
+    "max-len": ["error", 100],
+    "spaced-comment": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "arror-parens": [
+      2,
+      "as-needed"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "semi": [
+      2,
+      "never"
+    ],
+    "global-require": 0,
+    "generator-star-spacing": [
+      2,
+      {
+        "before": true,
+        "after": false
+      }
+    ],"no-confusing-arrow": 0,
+    "no-underscore-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "import/extensions": [
+      2,
+      "never",
+      {
+        "css": "always",
+        "svg": "always",
+        "woff": "always",
+        "eot": "always",
+        "ttf": "always",
+        "otf": "always",
+        "woff2": "always",
+        "theme": "always",
+        "style": "always",
+        "png": "always"
+      }
+    ],
+    "consistent-return": 0,
+    "no-unused-expressions": [
+      0,
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "chai-friendly/no-unused-expressions": [
+      2,
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "_"
+      }
+    ],
+    "react/sort-comp": [
+      2,
+      {
+        "order": [
+          "static-properties",
+          "static-methods",
+          "lifecycle",
+          "render",
+          "/^render.+$/",
+          "/^on.+$/",
+          "everything-else"
+        ],
+        "groups": {
+          "lifecycle": [
+            "displayName",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "mixins",
+            "statics",
+            "defaultProps",
+            "constructor",
+            "getDefaultProps",
+            "state",
+            "getInitialState",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount"
+          ]
+        }
+      }
+    ],
+    "no-plusplus": 0,
+    "class-methods-use-this": 0,
+    "jsx-a11y/anchor-has-content": 1,
+    "jsx-a11y/href-no-hash": 0,
+    "jsx-a11y/label-has-for": 0,
+    "no-param-reassign": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/forbid-prop-types": 1,
+    "react/no-unused-prop-types": [
+      1,
+      {
+        "skipShapeProps": true
+      }
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-redundant-roles": 0
+  }
+}
