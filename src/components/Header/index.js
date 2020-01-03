@@ -19,7 +19,7 @@ export default function index() {
                     <strong>Meu carrinho</strong>
                     <span>3 itens</span>
                 </div>
-                <MdShoppingBasket size={36}/>
+                <MdShoppingBasket size={36} color="#FFF"/>
             </Cart>
         </Container>
     )
