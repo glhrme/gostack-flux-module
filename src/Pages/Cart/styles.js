@@ -6,6 +6,10 @@ export const Container = styled.div `
     background: #fff;
     border-radius: 4px;
 
+    button {
+        cursor: pointer;
+    }
+
     footer {
         margin-top: 30px;
         display: flex;
