@@ -1,21 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MdAddShoppingCart } from 'react-icons/md'
 
+import api from '../../services/api'
 import { ProductList } from './styles'
-import Tenis from '../../assets/images/tenis.jpg'
+import { formatPrice } from '../../util/format'
 
 export default function Home() {
 
-  const [ num, addNum ] = useState([1,2,3,4,5])
+  const [ products, setProducts ] = useState([])
+
+  useEffect(()=>{
+    async function searchProducts() {
+
+      const response = await api.get('products')
+
+      const data = response.data.map( prod => ({
+        ...prod,
+        formatedPrice: formatPrice(prod.price)
+      }))
+
+      setProducts(data)
+
+    }
+
+    searchProducts()
+
+  },[])
 
   return (
     <ProductList>
-        { num.map(x => {
+        { products.map( prod => {
+          const { title, formatedPrice, image, id } = prod
           return (
-            <li>
-              <img width="100%" src={Tenis} alt="Tenis" />
-              <strong>Tênis muito loco</strong>
-              <span>R$ 129,90</span>
+            <li key={id} >
+              <img width="100%" src={image} alt="Tenis" />
+              <strong>{title}</strong>
+              <span>{formatedPrice}</span>
 
               <button type="button">
                 <div>
