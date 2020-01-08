@@ -27,6 +27,11 @@ function Header({ cartSize }) {
     )
 }
 
-export default connect(state => ({
-    cartSize: state.cart.length
-}))(Header)
+const mapStateToProps = STATE => ({
+    cartSize: STATE.cart.reduce( (amount, product) => {
+        amount = amount + product.amount
+        return amount
+    },0)
+})
+
+export default connect(mapStateToProps)(Header)
